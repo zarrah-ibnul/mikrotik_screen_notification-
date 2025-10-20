@@ -10,6 +10,7 @@ add dst-host=*code.jquery.com
 add dst-host=*shunnoit.top
 add dst-host=*scripts.pay.bka.sh
 add dst-host=client.pay.bka.sh
+
 /ip hotspot walled-garden ip
 add action=accept disabled=no !dst-address dst-address-list=Software \
     !dst-port !protocol !src-address !src-address-list
@@ -25,6 +26,7 @@ add action=accept disabled=no !dst-address dst-address-list=netfeebd.com \
     !dst-port !protocol !src-address !src-address-list
 add action=accept disabled=no !dst-address dst-address-list=shunnoit.com \
     !dst-port !protocol !src-address !src-address-list
+
 /ip firewall address-list
 add address=payment.bkash.com list=Bkash_Payment
 add address=siliconisp.com list=Software
@@ -96,3 +98,4 @@ add address=securepay.sslcommerz.com  list=netfeebd.com
 add address=epay.sslcommerz.com  list=netfeebd.com
 add address=api-epay.sslcommerz.com  list=netfeebd.com
 add address=geo.cardinalcommerce.com  list=netfeebd.com
+
