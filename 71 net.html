@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>71 NET - পেমেন্ট পৃষ্ঠা</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #FFD700;
+            --primary-dark: #FFC400;
+            --secondary: #FFD700;
+            --accent: #FF9800;
+            --light-bg: #000000;
+            --card-bg: #1a1a1a;
+            --text: #ffffff;
+            --text-muted: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+        }
+        
+        body {
+            font-family: "Segoe UI", "Noto Sans Bengali", Roboto, Arial, sans-serif;
+            background: #000000;
+            color: var(--text);
+            line-height: 1.3;
+            height: 100vh;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 400px;
+            max-height: 98vh;
+            margin: 0 auto;
+            overflow-y: auto;
+            padding: 3px;
+        }
+        
+        /* Hide scrollbar */
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        
+        .company-name {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 2px;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .current-date {
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            padding: 3px;
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+        
+        .notice-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 5px;
+        }
+        
+        .alert-badge {
+            display: block;
+            background: linear-gradient(135deg, #ff4444, #cc0000);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 12px;
+            margin-bottom: 6px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .notice-heading {
+            font-size: 13px;
+            color: var(--text);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .notice-text {
+            font-size: 11px;
+            margin-bottom: 5px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 9px;
+            background: #2a2a2a;
+            padding: 2px 4px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        
+        .payment-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #2196F3, #4CAF50);
+            color: white;
+            text-align: center;
+            padding: 7px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 12px;
+            margin: 6px 0;
+            box-shadow: 0 2px 6px rgba(33, 150, 243, 0.3);
+        }
+        
+        .compact-info {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 5px;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        
+        .payment-item {
+            text-align: center;
+            padding: 6px;
+            background: #2a2a2a;
+            border-radius: 6px;
+            border: 1px solid #444;
+        }
+        
+        .payment-title {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 3px;
+        }
+        
+        .payment-number {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 6px;
+            background: #2a2a2a;
+            border-radius: 6px;
+            border: 1px solid #444;
+            margin-bottom: 6px;
+        }
+        
+        .contact-title {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        
+        .contact-numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .contact-number {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .package-update-text {
+            font-size: 9px;
+            margin-bottom: 3px;
+            text-align: center;
+            color: var(--text);
+            font-weight: 600;
+            background: #2a2a2a;
+            padding: 3px;
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
+            margin-top: 5px;
+        }
+        
+        .price-item {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            padding: 5px 3px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 9px;
+            text-align: center;
+            border: 1px solid #444;
+            color: var(--text);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 6px;
+            color: var(--text-muted);
+            font-size: 8px;
+            line-height: 1.2;
+            background: #1a1a1a;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+        }
+        
+        .icon {
+            margin-right: 4px;
+            font-size: 11px;
+            vertical-align: middle;
+        }
+        
+        /* Bulletin Bar Styles */
+        .bulletin-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary), #2196F3);
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 9px;
+            font-weight: 600;
+            z-index: 1000;
+        }
+        
+        .bulletin-text {
+            display: inline-block;
+            padding: 0 6px;
+        }
+        
+        .heart {
+            color: #ff4444;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.3); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            20% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Date -->
+        <div class="header">
+            <h1 class="company-name">71 NET </h1>
+            <div class="current-date" id="current-date"></div>
+        </div>
+
+        <!-- Notice Card -->
+        <div class="notice-card">
+            <div class="alert-badge">নোটিশ - বিল এক্সপায়ার</div>
+            <h2 class="notice-heading">🚫 আপনার Wi-Fi ইন্টারনেটের মেয়াদ শেষ!</h2>
+            <p class="notice-text">সফটওয়্যারের তথ্য অনুযায়ী নির্দিষ্ট সময়ে বিল পরিশোধ না করার কারণে আপনার ইউজার আইডিটি সফটওয়্যার থেকে Log Out (লগ আউট) হয়ে গেছে। দ্রুত রিচার্জ করুন এবং নিরবিচ্ছিন্ন ওয়াইফাই ইন্টারনেট ব্যবহার করুন।</p>
+            
+            <!-- Payment Button -->
+            <a href="https://app.netfeebd.com/isp/4498" class="payment-button">
+                <span class="icon">💳</span>অনলাইনে পেমেন্ট করতে ক্লিক করুন
+            </a>
+            
+            <p class="notice-text"><span class="highlight">(বিল পেমেন্ট বা সেন্ড মানি করার সময় অবশ্যই আপনার আইডি নাম্বারটি রেফারেন্সে ব্যবহার করুন)</span></p>
+        </div>
+        
+        <!-- Compact Information Section -->
+        <div class="compact-info">
+            <!-- Payment Methods - 2 Columns -->
+            <div class="payment-methods">
+                <div class="payment-item">
+                    <div class="payment-title">বিকাশ পার্সোনাল</div>
+                    <div class="payment-number">01700833085</div>
+                </div>
+                
+                <div class="payment-item">
+                    <div class="payment-title">নগদ পার্সোনাল</div>
+                    <div class="payment-number">01642091133</div>
+                </div>
+            </div>
+            
+            <!-- Contact Numbers - 1 Column -->
+            <div class="contact-section">
+                <div class="contact-title">যোগাযোগ/ কমপ্লেইন নাম্বার</div>
+                <div class="contact-numbers">
+                    <span class="contact-number">01628781011</span>
+                    <span class="contact-number">01642091146</span>
+                    <span class="contact-number">01628781010 (বিল ম্যান)</span>
+                </div>
+            </div>
+            
+            <!-- Package Pricing -->
+            <div style="margin-top: 6px;">
+                <div class="package-update-text">আপনি চাইলে আপনার প্যাকেজ আপডেট করতে পারেন</div>
+                <div class="contact-title" style="margin-bottom: 3px;">প্যাকেজ মূল্য তালিকা</div>
+                
+                <div class="pricing-grid">
+                    <div class="price-item">20 Mbps<br>800 TK</div>
+                    <div class="price-item">25 Mbps<br>1000 TK</div>
+                    <div class="price-item">35 Mbps<br>1500 TK</div>
+                    <div class="price-item">50 Mbps<br>2000 TK</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>71 NET - আপনার বিশ্বস্ত ইন্টারনেট সেবাদাতা</p>
+            <p>দ্রুত ও নির্ভরযোগ্য ইন্টারনেট সেবা</p>
+        </div>
+    </div>
+    
+    <!-- Bulletin Bar -->
+    <div class="bulletin-bar">
+        <span class="bulletin-text">
+            "বসুন্ধরা নেট" এর সাথে থাকার জন্য আমাদের পক্ষ থেকে জানাই আন্তরিক ধন্যবাদ । 
+            <span class="heart">❤️</span> 
+            "ইন্টারনেট সেবা আপনার সাথে আছে সব সময়
+        </span>
+    </div>
+    
+    <script>
+        // Display current date and time with real-time update
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric'
+            };
+            const timeOptions = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            
+            const dateStr = now.toLocaleDateString('bn-BD', options);
+            const timeStr = now.toLocaleTimeString('bn-BD', timeOptions);
+            
+            document.getElementById('current-date').textContent = `${dateStr} | ${timeStr}`;
+        }
+        
+        // Update date immediately and then every second
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
