@@ -1,5 +1,5 @@
 /ip pool
-add name=Block ranges=123.10.0.0/22
+add name=Block ranges=123.10.0.2-123.10.3.254
 /ppp profile
 add local-address=123.10.0.1 name=Block only-one=yes remote-address=Block
 /ip firewall filter
@@ -21,3 +21,4 @@ add action=redirect action-data=123.10.0.1:8090 dst-address=!123.10.0.1 \
     dst-port=80 src-address=123.10.0.0/22
 add action=deny dst-address=0.0.0.0/0 src-address=0.0.0.0/0
 /ip/proxy/reset-html
+
