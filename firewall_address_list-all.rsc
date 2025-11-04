@@ -98,4 +98,6 @@ add address=securepay.sslcommerz.com  list=netfeebd.com
 add address=epay.sslcommerz.com  list=netfeebd.com
 add address=api-epay.sslcommerz.com  list=netfeebd.com
 add address=geo.cardinalcommerce.com  list=netfeebd.com
+add address=netfeebd.net  list=netfeebd.com
+
 
