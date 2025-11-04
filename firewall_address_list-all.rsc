@@ -100,5 +100,7 @@ add address=api-epay.sslcommerz.com  list=netfeebd.com
 add address=geo.cardinalcommerce.com  list=netfeebd.com
 add address=netfeebd.net  list=netfeebd.com
 add address=netzbd.com  list=netfeebd.com
+add address=netfeebd.com  list=netfeebd.com
+
 
 
