@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>এ ডট নেটওয়ার্ক — পেমেন্ট নোটিস</title>
+  <style>
+    :root{
+      --bg:#0a3d62;
+      --card:#ffffff;
+      --accent:#ff2b2b;
+      --muted:#7a8a99;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#07506e 0%,var(--bg) 100%); padding:16px; text-align:center}
+    .wrapper{width:100%; max-width:380px}
+    .card{background:var(--card); border-radius:12px; box-shadow:0 6px 20px rgba(30,50,80,0.12); overflow:hidden; display:flex; flex-direction:column; justify-content:center; align-items:center}
+    .card .top{background:red; color:#fff; padding:14px 12px; width:100%}
+    .brand{font-weight:700; font-size:20px}
+    .meta{font-size:14px; opacity:.95; margin-top:4px}
+    .body{padding:16px 14px; display:flex; flex-direction:column; align-items:center; justify-content:center}
+    h1{margin:0 0 8px 0; font-size:18px}
+    p{margin:0 0 8px 0; color:var(--muted); line-height:1.4}
+    .notice{background:#f7fbff; border:1px solid rgba(255,43,43,0.15); padding:10px; border-radius:8px; margin-bottom:14px; max-width:280px}
+    .notice p {color: #000; font-weight: 500;}
+    .info-box{display:flex; flex-direction:column; align-items:center; margin:6px 0;}
+    .footer{padding:10px 14px; font-size:12px; border-top:1px solid #eef3f8; width:100%; text-align:center}
+    .footer-box{background:#e6e6e6; padding:8px; border-radius:6px;}
+    .small{font-size:11px; color:#000}
+    @media (max-width:420px){.card{border-radius:10px}.brand{font-size:18px}.meta{font-size:13px}h1{font-size:16px}}
+
+    button{border:none; border-radius:6px; padding:8px 14px; font-size:14px; font-weight:600; cursor:default; color:#fff;}
+    .payment-btn{background:var(--accent);}
+    .contact-btn{background:#000;}
+    
+    .payment-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #05A82B, #07C52F);
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      margin: 10px 0;
+      box-shadow: 0 3px 10px rgba(5, 168, 43, 0.3);
+      transition: all 0.3s ease;
+      animation: blink 2s infinite;
+    }
+    
+    .payment-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(5, 168, 43, 0.4);
+      background: linear-gradient(#05A82B);
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card" role="dialog" aria-labelledby="title">
+      <div class="top">
+        <div class="brand">এ ডট নেটওয়ার্ক</div>
+        <div class="meta">ব্রডব্যান্ড ইন্টারনেট সার্ভিস প্রোভাইডার<br>পথের বাজার, সেনহাটি, দিঘলিয়া, খুলনা।</div>
+      </div>
+      <div class="body">
+        <h1 id="title">সম্মানিত গ্রাহক,</h1>
+        <div class="notice">
+          <p>আপনার ইন্টারনেটের মেয়াদ শেষ হওয়ার কারনে আপনি ইন্টারনেট ব্যবহার করতে পারছেন না।</p>
+          <p>পুনরায় সংযোগের জন্য রিচারজ করুন।</p>
+        </div>
+
+        <div class="info-box">
+          <button class="payment-btn">পেমেন্ট নাম্বার: 01914 45 63 96</button>
+        </div>
+
+        <div class="info-box">
+          <button class="contact-btn">যোগাযোগ নাম্বার: 01786 480 668</button>
+        </div>
+        
+        <a href="https://app.netfeebd.com/isp/1122" class="payment-button">
+          <span class="icon">💳</span>অনলাইনে পেমেন্ট করতে ক্লিক করুন
+        </a>
+
+      </div>
+      <div class="footer">
+        <div class="footer-box">
+          <div class="small">২৪/৭ সাপোর্ট উপলব্ধ<br>এ ডট নেটওয়ার্ক — আপনার বিশ্বস্ত ইন্টারনেট সেবাদাতা প্রতিষ্ঠান<br>পথের বাজার, সেনহাটি, দিঘলিয়া, খুলনা।</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

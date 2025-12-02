@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GK Network — Notice</title>
+
+<!-- Bengali-friendly webfont -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bangla:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-start: #dfefff;
+  --bg-end: #ffffff;
+  --card-bg: #ffffff;
+  --accent: #ff6a00;
+  --accent2: #ff2b2b;
+  --green: #0aaf4b;
+  --muted: #444444;
+  --radius: 16px;
+  --btn-radius: 30px;
+  --max-w: 400px;
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: "Noto Sans Bangla", "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+}
+
+.wrap{
+  width:100%;
+  max-width:var(--max-w);
+  padding:4px;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card{
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding:20px 16px;
+  color:var(--muted);
+  text-align:center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+.brand{
+  font-weight:700;
+  color: var(--accent2);
+  font-size:22px;
+  letter-spacing:0.3px;
+  margin-bottom:6px;
+}
+
+.meta{
+  color:#666666;
+  font-size:12px;
+  margin-bottom:14px;
+}
+
+.headline{
+  color:var(--green);
+  font-weight:700;
+  font-size:16px;
+  margin:6px 0 12px;
+}
+
+.salutation{
+  color:#222222;
+  font-weight:600;
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+.body-text{
+  color:#333333;
+  line-height:1.6;
+  font-size:13px;
+  margin-bottom:14px;
+  white-space:pre-line;
+}
+
+.btn{
+  display:inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color:white;
+  padding:10px 18px;
+  border-radius:var(--btn-radius);
+  font-weight:700;
+  text-decoration:none;
+  margin:6px auto;
+  min-width:180px;
+  box-shadow: 0 4px 10px rgba(255,43,43,0.15);
+  transition:transform .12s ease, box-shadow .12s ease;
+  display:block;
+  font-size:13px;
+}
+.btn:active{ transform:translateY(1px) }
+.btn.small{ 
+  min-width:140px; 
+  padding:8px 14px;
+  font-size:12px;
+}
+
+.payment-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  padding:10px 16px;
+  border-radius: var(--btn-radius);
+  font-weight: 700;
+  text-decoration: none;
+  margin: 8px auto;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.25);
+  transition: transform .12s ease, box-shadow .12s ease;
+  display: block;
+  animation: blink 1.5s infinite;
+  font-size: 13px;
+}
+
+.payment-button:active { 
+  transform: translateY(1px); 
+}
+
+.payment-button .icon {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.contact-row{ 
+  display:flex; 
+  gap:8px; 
+  justify-content:center; 
+  margin-top:8px; 
+  flex-wrap:wrap; 
+}
+
+.note{
+  margin-top:14px;
+  color:#555555;
+  font-size:12px;
+}
+
+.footer{
+  margin-top:12px;
+  color:var(--accent2);
+  font-weight:700;
+  font-size:12px;
+}
+
+@media (max-width:420px){
+  .card{ padding:16px 12px; }
+  .brand{ font-size:20px }
+  .headline{ font-size:15px }
+  .btn{ min-width:160px; font-size:12px; }
+  .btn.small { min-width:130px; font-size:11px; }
+  .payment-button { min-width: 180px; font-size: 12px; }
+  .contact-row { gap:6px; }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="region" aria-label="GK Network Notice">
+      <div class="brand">GK Network</div>
+      <div class="meta" id="datetime">মঙ্গলবার, 7 অক্টোবর, 2025 | 4:05:35 PM</div>
+      <div class="headline">আপনার Wi-Fi ইন্টারনেটের মেয়াদ শেষ।</div>
+      <div class="salutation">সম্মানিত গ্রাহক,</div>
+      <div class="body-text">
+নির্দিষ্ট সময়ে বিল পরিশোধ না করার কারণে
+আপনার Wi-Fi ইন্টারনেটের সংযোগ
+বিচ্ছিন্ন হয়েছে। দ্রুত রিচার্জ করুন
+এবং নিরবিচ্ছিন্ন Wi-Fi ইন্টারনেট ব্যবহার করুন
+      </div>
+      
+      <a class="btn" href="tel:01321744662">বিকাশ পেমেন্ট: 01321744662</a>
+      <div class="body-text">
+বিল পেমেন্ট করার সময় অবশ্যই আপনার গ্রাহক আইডি নাম্বারটি রেফারেন্সে উল্লেখ করুন।
+      </div>
+      <div class="contact-row" aria-hidden="false">
+        <a class="btn small" href="tel:01321744661">যোগাযোগ: 01321-744661</a>
+      </div>
+      <div class="footer">ইন্টারনেট সংযোগ বন্ধ করতে চাইলে ১ মাস পূর্বে কতৃপক্ষকে অবহিত করতে হবে।</div>
+    </div>
+  </div>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      };
+      const dateTimeStr = now.toLocaleDateString('bn-BD', options);
+      document.getElementById('datetime').textContent = dateTimeStr;
+    }
+    
+    // প্রথমবারের মতো কল
+    updateDateTime();
+    
+    // প্রতি সেকেন্ডে আপডেট করবে
+    setInterval(updateDateTime, 1000);
+    
+    // বাটন ক্লিক এনিমেশন
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function() {
+        this.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 200);
+      });
+    });
+  </script>
+</body>
+</html>

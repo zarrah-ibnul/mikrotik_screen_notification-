@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>কাজী নেট — পেমেন্ট নোটিস</title>
+  <style>
+    :root{
+      --bg:#0a3d62; /* deep cyan tone */
+      --card:#ffffff;
+      --accent:#ff2b2b; /* লাল */
+      --muted:#333333; /* গাঢ় কালো */
+      --text:#000000; /* কালো */
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; 
+      min-height:100vh; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      background:linear-gradient(180deg,#07506e 0%,var(--bg) 100%); 
+      padding:16px; 
+      text-align:center;
+      color: var(--text);
+    }
+    .wrapper{
+      width:100%; 
+      max-width:420px;
+    }
+    .card{
+      background:var(--card); 
+      border-radius:14px; 
+      box-shadow:0 8px 30px rgba(30,50,80,0.12); 
+      overflow:hidden; 
+      display:flex; 
+      flex-direction:column; 
+      justify-content:center; 
+      align-items:center;
+      color: var(--text);
+    }
+    .card .top{
+      background:red; 
+      color:#fff; 
+      padding:18px 16px; 
+      width:100%;
+    }
+    .brand{
+      font-weight:700; 
+      font-size:22px;
+    }
+    .meta{
+      font-size:16px; 
+      opacity:.95; 
+      margin-top:6px;
+    }
+    .body{
+      padding:20px 18px; 
+      display:flex; 
+      flex-direction:column; 
+      align-items:center; 
+      justify-content:center;
+      color: var(--text);
+    }
+    h1{
+      margin:0 0 12px 0; 
+      font-size:20px;
+      color: var(--text);
+    }
+    p{
+      margin:0 0 12px 0; 
+      color:var(--muted); 
+      line-height:1.5;
+    }
+    .notice{
+      background:#f7fbff; 
+      border:1px solid rgba(255,43,43,0.15); 
+      padding:12px; 
+      border-radius:10px; 
+      margin-bottom:20px; 
+      max-width:300px;
+      color: var(--muted);
+    }
+    .info-box{
+      display:flex; 
+      flex-direction:column; 
+      align-items:center; 
+      margin:10px 0;
+      width: 100%;
+    }
+    .footer{
+      padding:14px 18px; 
+      font-size:13px; 
+      border-top:1px solid #eef3f8; 
+      width:100%; 
+      text-align:center;
+    }
+    .footer-box{
+      background:#e6e6e6; 
+      padding:10px; 
+      border-radius:8px;
+      color: var(--text);
+    }
+    .small{
+      font-size:12px; 
+      color:var(--text);
+    }
+    @media (max-width:420px){
+      .card{border-radius:12px}
+      .brand{font-size:20px}
+      .meta{font-size:15px}
+      h1{font-size:18px}
+      .body{padding:16px 14px}
+      .info-box{margin:8px 0}
+    }
+
+    button{
+      border:none; 
+      border-radius:8px; 
+      padding:12px 18px; 
+      font-size:16px; 
+      font-weight:600; 
+      cursor:pointer; 
+      color:#fff;
+      width: 100%;
+      max-width: 300px;
+      transition: all 0.2s ease;
+    }
+    .payment-btn{
+      background:var(--accent);
+    }
+    .payment-btn:hover, .payment-btn:focus {
+      background:#e60000;
+      transform: translateY(-2px);
+    }
+    .contact-btn{
+      background:#000;
+    }
+    .contact-btn:hover, .contact-btn:focus {
+      background:#333;
+      transform: translateY(-2px);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card" role="dialog" aria-labelledby="title">
+      <div class="top">
+        <div class="brand">বিডি কম অনলাইন </div>
+        <div class="meta">ব্রডব্যান্ড ইন্টারনেট সার্ভিস প্রোভাইডার</div>
+      </div>
+      <div class="body">
+        <h1 id="title">সম্মানিত গ্রাহক,</h1>
+        <div class="notice">
+          <p>আপনার ইন্টারনেটের মেয়াদ শেষ হওয়ার কারনে আপনি ইন্টারনেট ব্যবহার করতে পারছেন না।</p>
+          <p>পুনরায় সংযোগের জন্য রিচার্জ করুন।</p>
+        </div>
+
+        <div class="info-box">
+          <button class="payment-btn" onclick="copyToClipboard('0188874496')">পেমেন্ট নাম্বার: 0188874496</button>
+        </div>
+
+        <div class="info-box">
+          <button class="contact-btn" onclick="copyToClipboard('01822376361')">যোগাযোগ নাম্বার: 01822376361</button>
+        </div>
+
+      </div>
+      <div class="footer">
+        <div class="footer-box">
+          <div class="small">২৪/৭ সাপোর্ট উপলব্ধ<br>বিডি কম অনলাইন  — আপনার বিশ্বস্ত ইন্টারনেট সেবাদাতা</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        alert('নাম্বার কপি হয়েছে: ' + text);
+      }, function(err) {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+      });
+    }
+  </script>
+</body>
+</html>

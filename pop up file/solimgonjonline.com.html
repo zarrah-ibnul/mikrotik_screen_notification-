@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solimgonj Online - পেমেন্ট পৃষ্ঠা</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2E7D32;
+            --primary-dark: #1B5E20;
+            --secondary: #1565C0;
+            --accent: #FF9800;
+            --light-bg: #f0f8f0;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-muted: #5a5a5a;
+            --border-radius: 6px;
+            --shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        }
+        
+        body {
+            font-family: "Segoe UI", "Noto Sans Bengali", Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--light-bg), #e8f5e9);
+            color: var(--text);
+            line-height: 1.3;
+            min-height: 100vh;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .company-name {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 2px;
+            color: var(--primary);
+        }
+        
+        .address {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            padding: 3px;
+            background: #e8f5e9;
+            border-radius: 3px;
+        }
+        
+        .current-date {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            padding: 3px;
+            background: #e8f5e9;
+            border-radius: 3px;
+        }
+        
+        .notice-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 6px;
+        }
+        
+        .alert-badge {
+            display: block;
+            background: linear-gradient(135deg, #ff4444, #cc0000);
+            color: white;
+            padding: 5px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 6px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .notice-heading {
+            font-size: 16px;
+            color: var(--secondary);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+        
+        .notice-text {
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 12px;
+            background: #e8f5e9;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        
+        .payment-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            text-align: center;
+            padding: 8px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            margin: 6px 0;
+            box-shadow: 0 1px 4px rgba(21, 101, 192, 0.3);
+        }
+        
+        .compact-info {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 6px;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        
+        .payment-item {
+            text-align: center;
+            padding: 6px;
+            background: #f5f9ff;
+            border-radius: 4px;
+            border: 1px solid #e1e8f0;
+        }
+        
+        .payment-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+        
+        .payment-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 6px;
+            background: #f5f9ff;
+            border-radius: 4px;
+            border: 1px solid #e1e8f0;
+            margin-bottom: 8px;
+        }
+        
+        .contact-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+        
+        .contact-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .package-update-text {
+            font-size: 12px;
+            margin-bottom: 3px;
+            text-align: center;
+            color: var(--primary);
+            font-weight: 600;
+            background: #e8f5e9;
+            padding: 3px;
+            border-radius: 3px;
+            margin-top: 4px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            margin-top: 4px;
+        }
+        
+        .price-item {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 5px 3px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid #90caf9;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 6px;
+            color: var(--text-muted);
+            font-size: 11px;
+            line-height: 1.2;
+        }
+        
+        .icon {
+            margin-right: 5px;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        
+        /* Bulletin Bar Styles */
+        .bulletin-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1000;
+        }
+        
+        .bulletin-text {
+            display: inline-block;
+            padding: 0 8px;
+        }
+        
+        .heart {
+            color: #ffeb3b;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.3); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            20% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Date -->
+        <div class="header">
+            <h1 class="company-name">solimgonjonline.com</h1>
+            <div class="address">ঠিকানাঃ দিনু প্লাজা, সলিমগঞ্জ বাজার, সলিমগঞ্জ</div>
+            <div class="current-date" id="current-date"></div>
+        </div>
+
+        <!-- Notice Card -->
+        <div class="notice-card">
+            <div class="alert-badge">নোটিশ - বিল এক্সপায়ার</div>
+            <h2 class="notice-heading">🚫 আপনার Wi-Fi ইন্টারনেটের মেয়াদ শেষ!</h2>
+            <p class="notice-text">সফটওয়্যারের তথ্য অনুযায়ী নির্দিষ্ট সময়ে বিল পরিশোধ না করার কারণে আপনার ইউজার আইডিটি সফটওয়্যার থেকে Log Out (লগ আউট) হয়ে গেছে। দ্রুত রিচার্জ করুন এবং নিরবিচ্ছিন্ন ওয়াইফাই ইন্টারনেট ব্যবহার করুন।</p>
+            
+            <!-- Payment Button -->
+            <a href="https://app.netfeebd.com/isp/4610" class="payment-button">
+                <span class="icon">💳</span>অনলাইনে পেমেন্ট করতে ক্লিক করুন
+            </a>
+            
+            <p class="notice-text"><span class="highlight">(বিল পেমেন্ট বা সেন্ড মানি করার সময় অবশ্যই আপনার ইউজার নেইমটি রেফারেন্সে ব্যবহার করুন)</span></p>
+        </div>
+        
+        <!-- Compact Information Section -->
+        <div class="compact-info">
+            <!-- Payment Methods - 2 Columns -->
+            <div class="payment-methods">
+                <div class="payment-item">
+                    <div class="payment-title">বিকাশ পার্সোনাল</div>
+                    <div class="payment-number">01646552649</div>
+                </div>
+                
+                <div class="payment-item">
+                    <div class="payment-title">যোগাযোগ নাম্বার</div>
+                    <div class="payment-number">01940863303</div>
+                </div>
+            </div>
+            
+            <!-- Contact Numbers - 1 Column -->
+            <div class="contact-section">
+                <div class="contact-title">যোগাযোগ/ কমপ্লেইন নাম্বার</div>
+                <div class="contact-numbers">
+                    <span class="contact-number">01940863303</span>
+                    <span class="contact-number">01646552649</span>
+                    <span class="contact-number">01680898963</span>
+                </div>
+            </div>
+            
+            <!-- Package Pricing -->
+            <div>
+                <div class="package-update-text">আপনি চাইলে আপনার প্যাকেজ আপডেট করতে পারেন</div>
+                <div class="contact-title" style="margin-bottom: 3px;">প্যাকেজ মূল্য তালিকা</div>
+                
+                <div class="pricing-grid">
+                    <div class="price-item">20 Mbps<br>500 TK</div>
+                    <div class="price-item">25 Mbps<br>700 TK</div>
+                    <div class="price-item">30 Mbps<br>1200 TK</div>
+                    <div class="price-item">35 Mbps<br>1500 TK</div>
+                    <div class="price-item">40 Mbps<br>2000 TK</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>solimgonjonline.com - আপনার বিশ্বস্ত ইন্টারনেট সেবাদাতা</p>
+        </div>
+    </div>
+    
+    <!-- Bulletin Bar -->
+    <div class="bulletin-bar">
+        <span class="bulletin-text">
+            "solimgonjonline.com" এর সাথে থাকার জন্য আমাদের পক্ষ থেকে জানাই আন্তরিক ধন্যবাদ । 
+            <span class="heart">❤️</span> 
+            "solimgonjonline.com" ইন্টারনেট সেবা আপনার সাথে আছে সব সময়
+        </span>
+    </div>
+    
+    <script>
+        // Display current date and time with real-time update
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric'
+            };
+            const timeOptions = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            
+            const dateStr = now.toLocaleDateString('bn-BD', options);
+            const timeStr = now.toLocaleTimeString('bn-BD', timeOptions);
+            
+            document.getElementById('current-date').textContent = `${dateStr} এ ${timeStr}`;
+        }
+        
+        // Update date immediately and then every second
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

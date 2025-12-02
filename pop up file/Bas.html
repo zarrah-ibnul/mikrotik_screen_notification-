@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAS NETWORK - ইন্টারনেট এক্সপায়ারি নোটিশ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2a2a2a);
+            color: #ffffff;
+            line-height: 1.5;
+            min-height: 100vh;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(20, 20, 20, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+            border: 1px solid #ff6a00;
+        }
+        
+        .company-name {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: #ff6a00;
+            text-shadow: 0 0 10px rgba(255, 106, 0, 0.7);
+        }
+        
+        .date-time {
+            font-size: 16px;
+            color: #cccccc;
+            font-weight: 500;
+        }
+        
+        .notice-card {
+            background: rgba(20, 20, 20, 0.9);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.2);
+            margin-bottom: 20px;
+            border: 1px solid #333333;
+        }
+        
+        .alert-badge {
+            display: block;
+            width: 90%;
+            margin: 0 auto 20px auto;
+            background: linear-gradient(135deg, #ff6a00, #ff2b2b);
+            color: white;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 106, 0, 0.5);
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.03); box-shadow: 0 0 20px rgba(255, 106, 0, 0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .notice-heading {
+            font-size: 22px;
+            color: #ff6a00;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(255, 106, 0, 0.5);
+        }
+        
+        .notice-text {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #ffffff;
+            text-align: justify;
+        }
+        
+        .contact-section {
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #333333;
+        }
+        
+        .contact-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ff6a00;
+            margin-bottom: 12px;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(255, 106, 0, 0.3);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            background: rgba(40, 40, 40, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 1px solid #444444;
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .contact-place {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ff6a00;
+            margin-bottom: 8px;
+        }
+        
+        .contact-number {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .support-footer {
+            text-align: center;
+            padding: 15px;
+            color: #cccccc;
+            font-size: 16px;
+            font-weight: 600;
+            background: rgba(20, 20, 20, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333333;
+        }
+        
+        .highlight {
+            color: #ff6a00;
+            font-weight: 700;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ff6a00, transparent);
+            margin: 15px 0;
+            border: none;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .company-name {
+                font-size: 24px;
+            }
+            
+            .notice-heading {
+                font-size: 20px;
+            }
+            
+            .alert-badge {
+                font-size: 16px;
+                padding: 10px;
+            }
+            
+            .contact-item {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header, .notice-card, .support-footer {
+                margin-bottom: 15px;
+                padding: 12px;
+            }
+            
+            .company-name {
+                font-size: 22px;
+            }
+            
+            .notice-heading {
+                font-size: 18px;
+            }
+            
+            .notice-text, .contact-number {
+                font-size: 14px;
+            }
+            
+            .contact-place {
+                font-size: 15px;
+            }
+            
+            .contact-info {
+                gap: 10px;
+            }
+            
+            .contact-item {
+                padding: 12px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 class="company-name">BAS NETWORK</h1>
+            <div class="date-time" id="current-date-time">বুধবার, 17 সেপ্টেম্বর, 2025 | 11:59:41 AM</div>
+        </div>
+        
+        <!-- Notice Card -->
+        <div class="notice-card">
+            <div class="alert-badge">নোটিশ - বিল এক্সপায়ার</div>
+            <h2 class="notice-heading">🚫 আপনার Wi-Fi ইন্টারনেটের মেয়াদ শেষ।</h2>
+            
+            <p class="notice-text">সম্মানিত গ্রাহক,</p>
+            <p class="notice-text">নির্দিষ্ট সময়ে বিল পরিশোধ না করার কারণে আপনার Wi-Fi ইন্টারনেটের সংযোগ বিচ্ছিন্ন হয়েছে। দ্রুত রিচার্জ করুন এবং নিরবিচ্ছিন্ন Wi-Fi ইন্টারনেট ব্যবহার করুন।</p>
+            
+            <hr class="divider">
+            
+            <!-- Contact Information -->
+            <div class="contact-section">
+                <div class="contact-title">যোগাযোগের নম্বরসমূহ</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-place">কেওয়া বাজার যোগাযোগ:</div>
+                        <div class="contact-number">০১৬৩২-০৬০৭০৯</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-place">ছাপিলাপাড়া হেমেস যোগাযোগ:</div>
+                        <div class="contact-number">০১৩১১-৪১১৯০৪</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="notice-text"><span class="highlight">দ্রষ্টব্য:</span> বিল পেমেন্ট বা সেন্ড মানি করার সময় অবশ্যই আপনার আইডি নাম্বারটি রেফারেন্সে ব্যবহার করুন।</p>
+        </div>
+        
+        <!-- Support Footer -->
+        <div class="support-footer">
+            <p>২৪/৭ সাপোর্ট — BAS NETWORK</p>
+            <p>আপনি অবগত থাকুন — বিল পরিশোধ ছাড়া সার্ভিস বন্ধ থাকবে</p>
+        </div>
+    </div>
+    
+    <script>
+        // Display current date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const dateTimeStr = now.toLocaleDateString('bn-BD', options);
+            document.getElementById('current-date-time').textContent = dateTimeStr;
+        }
+        
+        // Update date immediately and then every second
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

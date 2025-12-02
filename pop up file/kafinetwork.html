@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kafi Network — পেমেন্ট নোটিস</title>
+  <style>
+    :root{
+      --bg:#0a3d62; /* deep cyan tone */
+      --card:#ffffff;
+      --accent:#ff2b2b; /* লাল */
+      --muted:#7a8a99;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#07506e 0%,var(--bg) 100%); padding:16px; text-align:center}
+    .wrapper{width:100%; max-width:400px}
+    .card{background:var(--card); border-radius:14px; box-shadow:0 8px 30px rgba(30,50,80,0.12); overflow:hidden; display:flex; flex-direction:column}
+    .card .top{background:#000; color:#fff; padding:16px; width:100%}
+    .brand{font-weight:700; font-size:22px}
+    .meta{font-size:16px; opacity:.95; margin-top:4px}
+    .body{padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center}
+    h1{margin:0 0 10px 0; font-size:20px}
+    p{margin:0 0 10px 0; color:#FF4500; line-height:1.4; font-size:16px; font-weight: bold;}
+    .notice{background:#f7fbff; border:1px solid rgba(255,43,43,0.15); padding:16px; border-radius:10px; margin-bottom:16px; max-width:340px}
+    .info-box{display:flex; flex-direction:column; align-items:center; margin:8px 0; width: 100%;}
+    .footer{padding:12px 16px; font-size:13px; border-top:1px solid #eef3f8; width:100%; text-align:center}
+    .footer-box{background:#e6e6e6; padding:8px; border-radius:8px;}
+    .small{font-size:12px; color:#000}
+    @media (max-width:460px){.card{border-radius:12px}.brand{font-size:20px}.meta{font-size:15px}h1{font-size:18px}}
+
+    button{border:none; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:600; cursor:default; color:#fff; width: 100%; margin-bottom: 8px;}
+    .payment-btn{background:#000;}
+    .contact-btn{background:#000;}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card" role="dialog" aria-labelledby="title">
+      <div class="top">
+        <div class="brand">Kafi Network</div>
+        <div class="meta"></div>
+      </div>
+      <div class="body">
+        <h1 id="title">প্রিয় গ্রাহক,</h1>
+        <div class="notice">
+          <p>আসসালামু আলাইকুম।<br>আপনার ইন্টারনেট সেবার মেয়াদ উত্তীর্ণ হয়েছে।<br>সেবা চালু রাখতে দয়া করে রিচার্জ করুন।</p>
+        </div>
+
+        <div class="info-box">
+          <button class="payment-btn">আমাদের বিকাশ পেমেন্ট নম্বর: 01650246929</button>
+          <button class="contact-btn">কোনো সমস্যা হলে হেল্পলাইনে যোগাযোগ করুন: 01729186862</button>
+          <p style="color: #000; font-size: 14px; font-weight: normal; margin-top: 8px;">(পেমেন্টের সময় আপনার আইডি উল্লেখ করুন)</p>
+        </div>
+
+      </div>
+      <div class="footer">
+        <div class="footer-box">
+          <div class="small">Kafi Wifi এর সাথে থাকার জন্য ধন্যবাদ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
